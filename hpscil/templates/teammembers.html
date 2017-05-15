@@ -1,0 +1,71 @@
+{%extends "base.html"%}
+{%block content%}
+<div id="team" name="team">
+  <div class="container">
+    <div class="row">
+      <blockquote>
+        <h4>HPSCIL团队领导</h4>
+      </blockquote>
+        {%for people in leadship_list%}
+      <div class="col-md-3"> <img class="img " src="{{people.img.url}}" height="180px" width="180px" alt="">
+        <h4><a href="/memberinfo?id={{people.id}}">{{people.name}}({{people.get_title_display}})</a></h4>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="row">
+      <blockquote>
+        <h4>博士后</h4>
+      </blockquote>
+        {%for people in Postdoctoral_list%}
+      <div class="col-md-3"> <img class="img " src="{{people.img.url}}" height="180px" width="180px" alt="">
+        <h4><a href="/memberinfo?id={{people.id}}">{{people.name}}</a></h4>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="row">
+      <blockquote>
+        <h4>博士</h4>
+        {%for people in Doctor_list%}
+      <div class="col-md-3"> <img class="img " src="{{people.img.url}}" height="180px" width="180px" alt="">
+        <h4><a href="/memberinfo?id={{people.id}}">{{people.name}}</a></h4>
+      </div>
+      {%endfor%}
+      </blockquote>
+    </div>
+    <div class="row">
+      <blockquote>
+        <h4>硕士</h4>
+      </blockquote>
+        {%for people in Master_list%}
+      <div class="col-md-3"> <img class="img " src="{{people.img.url}}" height="180px" width="180px" alt="">
+        <h4><a href="/memberinfo?id={{people.id}}">{{people.name}}</a></h4>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="row">
+      <blockquote>
+        <h4>本科</h4>
+      </blockquote>
+        {%for people in Undergraduate_list%}
+      <div class="col-md-3"> <img class="img " src="{{people.img.url}}" height="180px" width="180px" alt="">
+        <h4><a href="/memberinfo?id={{people.id}}">{{people.name}}</a></h4>
+      </div>
+      {%endfor%}
+    </div>
+    <div class="row">
+      <blockquote>
+        <h4>毕业生</h4>
+      </blockquote>
+        {%for people in Graduate_list%}
+      <div class="col-md-3"> <img class="img " src="{{people.img.url}}" height="180px" width="180px" alt="">
+        <h4><a href="/memberinfo?id={{people.id}}">{{people.name}}</a></h4>
+      </div>
+      {%endfor%}
+    </div>
+    
+    
+    
+  </div>
+  <!-- row --> 
+</div>
+{%endblock%}

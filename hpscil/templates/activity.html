@@ -1,0 +1,32 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <blockquote><h4>实验室活动</h4></blockquote>
+    </div>
+
+<div class="row">
+
+    <div class="col-md-8">
+        <ul class="media-list">
+            {%for activity in activity_list%}
+            <li class="media">
+                <a class="pull-left" href="/activityinfo?id={{activity.id}}">
+                    <img src="{{activity.thumbnail.url}}" alt="" height=150px;>
+                </a>
+                <div class="media-body">
+                    <div>{{activity.topic}}</div>
+                    <div>时间:{{activity.time}}</div>
+                    <div>地点:{{activity.place}}</div>
+                    <div>人数:{{activity.people_num}}</div>
+                </div>
+            </li>
+            {%endfor%}
+        </ul>
+    </div>
+    <div class="col-md-4">
+    </div>
+</div>
+</div>
+
+{%endblock%}

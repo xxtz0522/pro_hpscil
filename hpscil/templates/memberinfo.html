@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container">
+    <img class="img img-circle" src="{{p.img.url}}" height="180px" width="180px" alt="">
+    <h4>{{p.name}}({{p.get_title_display}})</h4>
+    <p>{{p.info|safe}}</p>
+    <p>{{p.email}}</p>    
+</div>
+
+{%endblock%}

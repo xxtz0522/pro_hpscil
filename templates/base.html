@@ -1,0 +1,100 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>HPSCIL</title>
+
+<!-- Bootstrap core CSS -->
+
+<link href="/static/css/bootstrap.css" rel="stylesheet">
+<link href="/static/css/flat-ui.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="/static/css/main.css" rel="stylesheet">
+<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/animate-custom.css" rel="stylesheet">
+<!--metro css-->
+
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body >
+<div id="navbar-main"> 
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container"><!--控制菜单位置-->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <a class="navbar-brand" href="/">HPSCIL</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/" class=" ">首页</a></li>
+          <li> <a  href="/news" class=" dropdown-toggle" data-toggle="dropdown">
+          学术要闻
+          <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+                <li><a href="/news">实验室新闻</a></li>
+                <li><a href="/trends">行业动态</a></li>
+                <li><a href="javacript:;">研究进展</a></li>
+                <li><a href="/activity">实验室活动</a></li>
+          </ul>
+          </li>
+          <li><a href="/research" class="">研究成果</a></li>
+          <li> <a href="/teammembers" class=""> 团队成员</a></li>
+          <li> <a href="/about" class=""> 关于我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+{%block content%}
+
+{%endblock%}
+</div>
+
+<!-- container -->
+
+<div id="footerwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 centered"> <i class="fa fa-map-marker fa-2x"></i>
+        <p>{{teamInfo_list.0.address}}<br>
+          邮编：{{teamInfo_list.0.postcode}}</p>
+      </div>
+      <div class="col-md-3"> <i class="fa fa-envelope-o fa-2x"></i>
+        <p>{{teamInfo_list.0.email}}</p>
+      </div>
+      <div class="col-md-3"> <i class="fa fa-phone fa-2x"></i>
+        <p> {{teamInfo_list.0.tel}}</p>
+      </div>
+      <div class="col-md-3"> 
+        <img src="/static/img/er.jpg">
+      </div>
+    </div>
+    <!-- row -->    
+  </div>
+    <div class="row">
+      <div class="col-md-12"> <span class="copyright">Copyright &copy; 2017 HPSCIL</span> </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="/static/js/site.js"></script> 
+
+</body>
+</html>

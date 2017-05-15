@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block content%}
+<div id="research" name="sys">
+  <div class="container">
+    <blockquote><h4>实验室研究成果</h4></blockquote>
+       <div class="row">       
+            {%for research in research_list%}
+                    <div class="col-md-3 ">          
+                        <img class="img-responsive" src="{{research.img.url}}" alt="">
+                        <p><a href="/researchinfo?id={{research.id}}">{{research.title}}</a></p>
+                        <p>{{research.time}}</p>
+                    </div>              
+            {%endfor%}
+    </div>
+  </div>  
+</div> 
+{%endblock%}

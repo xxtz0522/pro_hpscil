@@ -1,0 +1,145 @@
+{%extends "base.html"%}
+{%block content%}
+
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        {%for carousel in carousel_list%}
+        {%if forloop.first%}
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        {%else%}
+        <li data-target="#myCarousel" data-slide-to="{{forloop.counter}}"></li>
+        {%endif%}
+        {%endfor%}
+    </ol> 
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        {%for carousel in carousel_list%}
+        {%if forloop.first%}
+        <div class="item active">
+            <a href="javascript:;"><img src="{{carousel.img.url}}" alt="Second slide"></a>
+        <div class="carousel-caption">
+                <div class="row" style="background: rgba(0,0,0,0.5);height: 150px">
+                        <div class="col-md-12"><h3><a href="/detail?id={{carousel.id}}">{{carousel.title}}</a></h3></div>
+                        <div class="col-md-12"><p>{{carousel.time}}</p></div>
+                </div>
+        </div>
+        </div>
+        {%else%}
+                <div class="item">
+            <a href="javascript:;"><img src="{{carousel.img.url}}" alt="Second slide"></a>
+        <div class="carousel-caption">
+                <div class="row" style="background: rgba(0,0,0,0.5);height: 150px">
+                        <div class="col-md-12"><h3><a href="/detail?id={{carousel.id}}">{{carousel.title}}</a></h3></div>
+                        <div class="col-md-12"><p>{{carousel.time}}</p></div>
+                </div>
+        </div>
+        </div>
+                {%endif%}
+        {%endfor%}
+    </div>
+    <a class="carousel-control left" href="#myCarousel" 
+        data-slide="prev">
+    </a>
+    <a class="carousel-control right" href="#myCarousel" 
+        data-slide="next">
+    </a>       
+    <!-- 轮播（Carousel）导航 -->
+
+</div>
+
+<!-- ==== ABOUT ==== -->
+<!-- container --> 
+
+<!-- ==== news ==== -->
+<div id="news">
+  <div class="container">
+    <div class="row">     
+      <div class="col-lg-4 callout text-center"> <i class="fa fa-desktop fa-3x"></i>
+      <a href="/research">
+        <h3>实验室研究</h3>
+        <p>实验室研究方向多样化，高性能计算、深度学习、机器学习、数据挖掘</p>
+      </a>  
+
+      </div>
+      <div class="col-lg-4 callout text-center"> <i class="fa fa-gears fa-3x"></i>
+              <a href="/research">
+        <h3>行业动态</h3>
+        <p>GIS发展、高性能计算</p>
+      </a> 
+      </div>
+      <div class="col-lg-4 callout text-center"> <i class="fa fa-dot-circle-o fa-3x"></i>
+              <a href="/activity">
+        <h3>相关活动</h3>
+        <P>十分有趣的活动</P>
+      </a> 
+      </div>
+                
+    </div>
+  </div>
+</div>
+<!-- container --> 
+
+<!-- ==== sys ==== -->
+<div id="sys" name="sys"> 
+    <div class="row">
+        <div class="container">
+      <h4 class="centered">研究成果</h4>
+      <div class="col-lg-8 col-lg-offset-2 centered">
+      </div>
+    </div>
+    <!-- /row -->
+    <div class="container">
+        <div class="row">
+        <!-- sys IMAGE 1 -->
+        {%for research in research_list%}
+        <div class="row">
+         <div class="research col-md-4">
+            <a class="thumbnail"> <img src="{{research.img.url}}"></a>
+        </div>
+        <div class="col-md-8">
+                <div class="row">
+                        <h5>{{research.title}}</h5>
+                </div>
+                <div class="row">
+                        <p>{{research.time}}</p>
+                </div>
+                <div class="row">
+                        <p>{{research.content|safe}}</p>
+                </div>               
+                <div class="row" style="text-align: right">
+                        <a href="javascript:;"><img src="/static/img/read.png"/>浏览(100)</a>
+                        <a href="javascript:;"><img src="/static/img/point.png"/>赞(200)</a>
+                     <a class="label label-success" href="/researchinfo?id={{research.id}}">阅读全文</a>   
+                </div>               
+        </div>               
+        </div>
+        {%endfor%}
+      </div>
+      <!-- /row --> 
+      
+      <!-- /row --> 
+    </div>
+    <!-- /row --> 
+  </div>
+</div>
+<!-- /container --> 
+
+<!-- ==== TEAM MEMBERS ==== -->
+<div id="team" name="team">
+  <div class="container">
+    <div class="row centered">
+      <h4 class="centered">团队成员</h4>
+        {%for people in people_list%}
+        <div class="col-md-3"> <img src="{{people.img.url}}" height="180px" width="180px">
+          <h5><a href="/memberinfo?id={{people.id}}">{{people.name}}({{people.get_title_display}})</a></h5>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+  <!-- row --> 
+</div>
+<!-- container --> 
+{%endblock%}
+

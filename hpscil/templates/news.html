@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{%block content%}
+  <div class="container">
+        {%for news in news_list%}
+      <div class="news">
+        <h5>{{news.title}}</h5>
+        <p>{{news.time}}</p>
+        <p>{{news.content|striptags|truncatechars:200|linebreaks}}</p>
+        <a href="/detail?id={{news.id}}">阅读更多</a>        
+      </div>
+     
+      {%endfor%}
+      <div class="pagination">
+    <span class="step-links">
+        {% if news_list.has_previous %}
+            <a href="?page={{ news_list.previous_page_number }}">前一页</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ news_list.number }} of {{ news_list.paginator.num_pages }}.
+        </span>
+
+        {% if news_list.has_next %}
+            <a href="?page={{ news_list.next_page_number }}">下一页</a>
+        {% endif %}
+    </span>
+</div>  
+  </div>
+
+{%endblock%}

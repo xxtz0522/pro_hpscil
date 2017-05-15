@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container">
+<div class="row">
+    <blockquote>
+        <h5>{{act.topic}}</h5>
+        <p>{{act.time}}{{act.place}}</p>
+    </blockquote>
+    <div class="col-md-12">
+        {{act.content|safe}}
+    </div>
+    
+</div>
+<div class="row">
+    
+</div>
+<div class="row">
+        <blockquote>
+        <h5>评论列表</h5>
+    </blockquote>
+</div>
+</div>
+
+{%endblock%}
